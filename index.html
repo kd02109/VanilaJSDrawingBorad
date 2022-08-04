@@ -8,25 +8,112 @@
     <title>Document</title>
 </head>
 <body>
-    <canvas id="jsCanvas" class="canvas"></canvas>
-    <div class="controls">
-        <div class="controls__range">
-            <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" step="0.1"/>
-        </div>
-        <div class="controls__btn">
-            <button id="jsMode">Fill</button>
-            <button id="jsSave">Save</button>
-        </div>
+    <div class="canvas-box">
+        <canvas id="jsCanvas" class="canvas"></canvas>
         <div class="controls__colors" id="jsColors">
-            <div class="controls__color" style="background-color: #2c2c2c"></div>
-            <div class="controls__color" style="background-color: white"></div>
-            <div class="controls__color" style="background-color: red"></div>
-            <div class="controls__color" style="background-color: #ff9500"></div>
-            <div class="controls__color" style="background-color: #fc0"></div>
-            <div class="controls__color" style="background-color: #4cd963"></div>
-            <div class="controls__color" style="background-color: #5ac8fa"></div>
-            <div class="controls__color" style="background-color: #0579ff"></div>
-            <div class="controls__color" style="background-color: olive"></div>
+            <input type="color" id="color">
+            <div class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></div>
+            <div class="color-option" style="background-color: #3498db;" data-color="#3498db"></div>
+            <div class="color-option" style="background-color: #34495e;" data-color="#34495e"></div>
+            <div class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></div>
+            <div class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></div>
+            <div class="color-option" style="background-color: #f1c40f;" data-color="#f1c40f"></div>
+            <div class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></div>
+            <div class="color-option" style="background-color: #95a5a6;" data-color="#95a5a6"></div>
+            <div class="color-option" style="background-color: #d35400;" data-color="#d35400"></div>
+            <div class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></div>
+            <div class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></div>
+            <div class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></div>
+        </div>
+        <div class="controls">
+            <div class="controls__range">
+                <fieldset>
+                    <legend>Brush Size</legend>
+                    <input type="range" id="jsRange" min="1" max="10" value="5" step="0.1"/>
+                </fieldset>
+            </div>
+            <div class="controls__btn">
+                <button id="jsMode">Fill</button>
+                <button id="jsSave">Save</button>
+                <button id="jsDestroy">Destroy</button>
+                <button id="jsErase">Erase</button>
+                <label for="file">
+                    Add Photho
+                    <input type="file" accept="image/*" id="file">
+                </label>
+            </div>
+            <div class="font">
+                <fieldset>
+                    <legend>FONT</legend>
+                    <input type="text" placeholder="Add text & click canvas!!" id="text">
+                    <select id="fontTypes" autocomplete="off" required>
+                        <option value="serif" style="font-family: serif">Serif</option>
+                        <option value="sans-serif" style="font-family: sans-serif">
+                          Sans-serif
+                        </option>
+                        <option value="courier new" style="font-family: courier new">
+                          Courier New
+                        </option>
+                        <option
+                          value="Lucida Console"
+                          style="font-family: Lucida Console"
+                        >
+                          Lucida Console
+                        </option>
+                        <option value="cursive" style="font-family: cursive">
+                          Cursive
+                        </option>
+                        <option
+                          value="Brush Script MT"
+                          style="font-family: Brush Script MT"
+                        >
+                          Brush Script MT
+                        </option>
+                        <option
+                          value="lucida Handwriting"
+                          style="font-family: lucida Handwriting"
+                        >
+                          Lucida Handwriting
+                        </option>
+                        <option value="copperplate" style="font-family: copperplate">
+                          Copperplate
+                        </option>
+                        <option value="papyrus" style="font-family: Papyrus">
+                          Papyrus
+                        </option>
+                        <option
+                          value="'Noto Sans KR', sans-serif"
+                          style="font-family: 'Noto Sans KR', sans-serif"
+                        >
+                          Noto Sans 한글
+                        </option>
+                        <option
+                          value="'Nanum Myeongjo', serif"
+                          style="font-family: 'Nanum Myeongjo', serif"
+                        >
+                          나눔 명조
+                        </option>
+                        <option
+                          value="'Nanum Pen Script', cursive"
+                          style="font-family: 'Nanum Pen Script', cursive"
+                        >
+                          나눔펜
+                        </option>
+                        <option
+                          value="'Jua', sans-serif"
+                          style="font-family: 'Jua', sans-serif"
+                        >
+                          주아
+                        </option>
+                      </select>
+                    <input type="number" min="1" value="50" id="fontSize">
+                    <select name="fontFillType" id="fontFillType">
+                        <option value="fillText">Fill</option>
+                        <option value="strokeText">Empty</option>
+                    </select>
+    
+                </fieldset>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
